@@ -28,7 +28,7 @@ public class Portal2 : MonoBehaviour
 
     private void Portal()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
 }

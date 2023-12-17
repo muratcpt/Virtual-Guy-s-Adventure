@@ -29,7 +29,7 @@ public class Portal3 : MonoBehaviour
 
     private void Portal()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
 
 }

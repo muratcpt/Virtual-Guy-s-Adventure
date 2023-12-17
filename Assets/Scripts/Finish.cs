@@ -25,7 +25,7 @@ public class Finish : MonoBehaviour
     }
     private void CompleteLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
 }

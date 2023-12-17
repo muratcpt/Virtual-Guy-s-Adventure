@@ -12,11 +12,13 @@ public class Firetrap : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool triggered;
     private bool active;
+    private PLayerLife firetrigger;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();    
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        firetrigger = GetComponent<PLayerLife>();
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,13 +27,26 @@ public class Firetrap : MonoBehaviour
         {
             if (!triggered)
             {
-
+                StartCoroutine(ActivateFÝreTrap());
             }
             if(active)
             {
-                
+                Debug.Log("Hasar aldýn");
             }
         }
+    }
+    private IEnumerator ActivateFÝreTrap()
+    {
+        triggered = true;
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(activationDelay);
+        spriteRenderer.color = Color.white;
+        active = true;
+        anim.SetBool("activated", true);
+        yield return new WaitForSeconds(activeTime);
+        active = false;
+        triggered = false;
+        anim.SetBool("activated", false);
     }
 
 }

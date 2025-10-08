@@ -56,3 +56,6 @@ TagManager:
   - name: Yol Kenari
     uniqueID: 638568689
     locked: 0
+  - name: Traps
+    uniqueID: 3261683001
+    locked: 0

@@ -26,12 +26,12 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
-        rb2d.velocity = new Vector2 (dirX * speed, rb2d.velocity.y);
+        rb2d.linearVelocity = new Vector2 (dirX * speed, rb2d.linearVelocity.y);
 
         if(Input.GetKeyDown(KeyCode.W) && IsGrounded()) 
         {
             jumpSoundEffect.Play();
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpAmount);
+            rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpAmount);
 
         }
 
@@ -57,11 +57,11 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.idle;
         }
-        if (rb2d.velocity.y > .1f)
+        if (rb2d.linearVelocity.y > .1f)
         {
             state = MovementState.jumping;
         }
-        else if (rb2d.velocity.y < -.1f)
+        else if (rb2d.linearVelocity.y < -.1f)
         {
             state = MovementState.falling;
         }

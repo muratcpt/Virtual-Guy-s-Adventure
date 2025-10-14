@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour
     {
 
         dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(dirX * speed, rb.linearVelocity.y);
 
         dirY = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(rb.velocity.x, dirY * speed);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, dirY * speed);
         UpdateAnimationState();
 
     }

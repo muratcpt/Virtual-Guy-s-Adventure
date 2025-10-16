@@ -37,7 +37,12 @@ public class PLayerLife : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             // Die() yerine TakeDamage çağırıyoruz.
+
             TakeDamage(1);
+        }
+        else if(collision.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(3);
         }
     }
 
